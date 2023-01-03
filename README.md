@@ -21,7 +21,7 @@ By the end of this course students should be able to:
 
 
 ### Contact Instructors 
-Lyla Atta: lylaatta@jhmi.edu \  
+Lyla Atta: lylaatta@jhmi.edu  <br>
 Kalen Clifton: kclifo2@jh.edu
 
 ### Acknowledgements 
