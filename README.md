@@ -1,6 +1,5 @@
 # Introduction to Data Analaysis and Visualization
 ## Instructors: Lyla Atta and Kalen Clifton
-### Intersession 2023
 
 
 Welcome! 
@@ -22,7 +21,7 @@ By the end of this course students should be able to:
 
 
 ### Contact Instructors 
-Lyla Atta: lylaatta@jhmi.edu
+Lyla Atta: lylaatta@jhmi.edu \\ 
 Kalen Clifton: kclifo2@jh.edu
 
 ### Acknowledgements 
