@@ -11,12 +11,23 @@ In the first week, we will be going through a full data analysis and visualizati
 
 This course will be conducted using the R statistical programming language but no prior experience in R required. Students experienced in other programming languages are welcome to use them. 
 
-COURSE GOALS
+### Course Goals
 By the end of this course students should be able to: 
-●	Evaluate data visualizations for saliency using design principles
-●	Formulate research questions to generate new knowledge given data
-●	Organize data for exploratory and explanatory data analyses
-●	Produce data visualizations in R
-●	Troubleshoot coding issues
-●	Utilize GitHub for computational collaborations
+- Evaluate data visualizations for saliency using design principles
+- Formulate research questions and generate new knowledge given data
+- Clean and organize data for exploratory and explanatory data analyses
+- Produce data visualizations in R (or other programming language)
+- Troubleshoot programming issues
+- Utilize GitHub for computational collaborations
+
+
+### Contact Instructors 
+Lyla Atta: lylaatta@jhmi.edu
+Kalen Clifton: kclifo2@jh.edu
+
+### Acknowledgements 
+This course is inspired by the [Genomic Data Visualization](https://jef.works/genomic-data-visualization-2022/) course designed by Prof. Jean Fan in JHU BME. 
+
+Further acknowledgements to be added. 
+
 
