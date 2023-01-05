@@ -27,7 +27,29 @@ https://docs.github.com/en/get-started/quickstart/fork-a-repo <br>
 - Cloning a repo creates a local (on your machine) copy of the repository that is hosted on GitHub. This allows you to create/delete files and make changes as if you were working in a regular directory on your computer. <br>
 - To clone the repo, go to your forked repo in your GitHub account. Make sure in the top left you see [YOUR GitHub USERNAME/intersession_data_2023]. On the top right, you'll see a green "Code" button. After you click on code, copy the repo address. <br>
 ![git fork](./../../assets/images/week1_git_clone.png)  <br>
-- In terminal enter the command `git clone [repo address]`. <br>
+- In terminal enter the command `git clone [repo address]`. I like to keep all my GitHub repos in a folder called GitHub for organizational purposes. <br>
+
+4. Make and push a change in your local repo
+- As your first change to the class GitHub, create a profile (real or imaginary) to add to the class website. Copy and modify the template example in the authors folder. <br>
+- To sync the changes you have made locally to your remote repository hosted on GitHub you need to: 
+	- Add the changes to the git staging area. This tells git which changes you want to sync to the remote repository. We want to sync all (1) changes: 
+		- In terminal, navigate to your GitHub repo. `cd [directory name]` to navigate to a directory, `cd ..` to navigate to a parent directory, and `ls` to list file in current directory are helpful commands. <br>
+		- When you're in your GitHub repo, enter the command `git add .` to add all changes to the git staging area. In the future, if you want to add a specific file to the staging area, you can use `git add [filename]` instead.<br>
+		- To check that you files have been added, you can use the command `git status`. You should see your changed file in green. <br>
+		- You can read more about the git staging area here: https://www.atlassian.com/git/tutorials/saving-changes <br>
+	- Commit changes. This tells git that this is a snapshot of the project that you want to capture. It is helpful (vital!) to add a meaningful commit message to each commit to enable you (or your project collaborators) to figure out how the project was updated in this step, in case you ever need to revert back to this snapshot. <br>
+		- To commit changes and add a commit message, enter the command `git commit -m [your message]` <br>
+	- Now that you have committed your changes, you can "push" those changes to the remote repository:
+		- `git push` <br>
+		- You should now be able to see your added file in your forked repo on the GitHub website. <br>
+- Note on the `.gitignore` file: <br>
+	- Remember how we used `git add .` to add all changed files to the staging area? Sometimes we want to add all files to the staging area except certain types of files. These could be large data files (GitHub has a 100Mb size limit) or temporary files that are not relevant to the project. You can tell git to ignore certain files by adding them to the `.gitignore` file. The `.gitignore` file is usually hidden, you can see it if you enter `ls -a` to list all files. 
+
+
+
+
+
+
 
 
 
