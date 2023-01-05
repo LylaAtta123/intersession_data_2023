@@ -26,7 +26,7 @@ https://docs.github.com/en/get-started/quickstart/fork-a-repo <br>
 3. Clone your forked repo 
 - Cloning a repo creates a local (on your machine) copy of the repository that is hosted on GitHub. This allows you to create/delete files and make changes as if you were working in a regular directory on your computer. <br>
 - To clone the repo, go to your forked repo in your GitHub account. Make sure in the top left you see [YOUR GitHub USERNAME/intersession_data_2023]. On the top right, you'll see a green "Code" button. After you click on code, copy the repo address. <br>
-![git fork](./../../assets/images/week1_git_clone.png)  <br>
+![git clone](./../../assets/images/week1_git_clone.png)  <br>
 - In terminal enter the command `git clone [repo address]`. I like to keep all my GitHub repos in a folder called GitHub for organizational purposes. <br>
 
 4. Make and push a change in your local repo
@@ -48,10 +48,15 @@ https://docs.github.com/en/get-started/quickstart/fork-a-repo <br>
 
 5. Pull request
 - Now that you have made changes and synced them from your local machine to your remote repository, you can request that your changes be added to the parent repository (the main class repo). <br>
-- Head to your repo on the website. Find the "Contribute" button on the top right and then hit the "Open pull request button". <br>
+- Head to your repo on the GitHub website. Find the "Contribute" button on the top right and then hit the "Open pull request button". <br>
+![git clone](./../../assets/images/week1_pull_request.png) 
 
 6. Syncing fork and pulling changes. 
-- It's generally a good idea to sync changes with the parent repo before you add any changes of your own to avoid conflicts. To do that, click on the Sync fork button on the top right. This makes sure that your forked repo has the same files as the parent repo. Then make sure that your local repo is synced with your fork by entering the command `git pull` in terminal. 
+- It's generally a good idea to sync changes with the parent repo before you add any changes of your own to avoid conflicts. To do that, click on the Sync fork button on the top right. This makes sure that your forked repo has the same files as the parent repo. <br>
+
+![git clone](./../../assets/images/week1_sync_fork.png)  <br> 
+- Then make sure that your local repo is synced with your fork by entering the command `git pull` in terminal. <br> 
+
 
 
 
