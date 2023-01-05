@@ -34,7 +34,7 @@ The RStudio integrated development environment (IDE) is a set of tools built to 
 
 <img width="779" alt="R Console screenshot" src="https://user-images.githubusercontent.com/54687845/210785387-67a92c98-384d-4a6b-a001-efcf1d5e6933.png">
 
-2. If you are unfamiliar with R programming syntax, please try out the interactive primer found at [https://posit.cloud/learn/primers/1.2](https://posit.cloud/learn/primers/1.2) to learn the programming basics.
+2. To become familiarized with R programming syntax, please try out the interactive primer found at [https://posit.cloud/learn/primers/1.2](https://posit.cloud/learn/primers/1.2) to learn the programming basics.
 3. One value of RStudio is that you can view and edit R scripts in the same window as running code in the console. R scripts are how you can save lines of code in a file to run in the future. R scripts have the naming syntax 'filename.R' when saved. Practice creating and saving R scripts onto your local machine by utilizing the icons at the top left.
 <img width="786" alt="R Script" src="https://user-images.githubusercontent.com/54687845/210785723-ca760aac-19fb-480c-a258-cbecc9392709.png"> 
 
