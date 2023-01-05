@@ -2,11 +2,11 @@
 
 ### RStudio (and R) Tutorial
 
-####What is R?
+#### What is R?
 
 R is a freely available language and environment for statistical computing and graphics which provides a wide variety of statistical and graphical techniques: linear and nonlinear modelling, statistical tests, time series analysis, classification, clustering, etc.
 
-####Download R from CRAN
+#### Download R from CRAN
 
 CRAN is a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R. It is suggested to use the CRAN mirror nearest to you to minimize network load.
 
@@ -18,17 +18,17 @@ CRAN is a network of ftp and web servers around the world that store identical, 
 
 3. Choose the appropriate link and follow the provided instructions to download the R for your operating system.
 
-####What is RStudio?
+#### What is RStudio?
 
 The RStudio integrated development environment (IDE) is a set of tools built to help you be more productive with R. It includes a console, syntax-highlighting editor that supports direct code execution. It also features tools for plotting, viewing history, debugging and managing your workspace.
 
-####Download RStudio Desktop
+#### Download RStudio Desktop
 
 1. Navigate to [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/).
 
 2. Choose the appropriate installer for your operating system and install RStudio.
 
-####Utilizing RStudio
+#### Utilizing RStudio
 
 1. Once you open the RStudio application on your machine, you can utilize the version of R that you downloaded by using the "Console". Here you can run a single line of code and have the result be returned. 
 
