@@ -9,7 +9,15 @@ To get practice with GitHub in this class, we will be adding data analyses and v
 1. Getting started
 - Create a GitHub account: https://github.com/join <br>
 - Install Git on your machine: <br>
-	- If you are working on a mac or linux, you may already have Git installed. To check if you have git installed already, launch terminal and type the command `git version`  <br>
+	- If you are working on a mac or linux, you may already have Git installed. To check if you have git installed already, launch terminal and type the command `git version`. You should see something like this:  <br>
+
+	![git version output](./../../assets/images/week1_git_version_output.png)  <br>
+
 	- If not, you can download and install git from here: https://git-scm.com/downloads <br> 
 
-2. 
+2. Make a fork of the class repo
+- Making a fork copies an existing repository but keeps a link to it so that you can update your copy whenever the parent repository changes and you can also contribute new changes in your respository to the parent. <br>
+https://docs.github.com/en/get-started/quickstart/fork-a-repo <br>
+- To create a fork, navigate to the class repo on the GitHub website: https://github.com/LylaAtta123/intersession_data_2023 <br>
+- In the top, right you will see a "Fork": <br>
+![git fork](./../../assets/images/week1_git_fork.png)  <br>
