@@ -30,7 +30,7 @@ https://docs.github.com/en/get-started/quickstart/fork-a-repo <br>
 - In terminal enter the command `git clone [repo address]`. I like to keep all my GitHub repos in a folder called GitHub for organizational purposes. <br>
 
 4. Make and push a change in your local repo
-- As your first change to the class GitHub, create a profile (real or imaginary) to add to the class website. Copy and modify the template example in the authors folder. <br>
+- As your first change to the class GitHub, create a profile (real or imaginary) to add to the class website. Copy and modify the template example in the authors folder. Add a profile photo to the profiles folder. <br>
 - To sync the changes you have made locally to your remote repository hosted on GitHub you need to: 
 	- Add the changes to the git staging area. This tells git which changes you want to sync to the remote repository. We want to sync all (1) changes: 
 		- In terminal, navigate to your GitHub repo. `cd [directory name]` to navigate to a directory, `cd ..` to navigate to a parent directory, and `ls` to list file in current directory are helpful commands. <br>
