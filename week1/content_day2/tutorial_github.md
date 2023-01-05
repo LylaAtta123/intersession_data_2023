@@ -46,6 +46,15 @@ https://docs.github.com/en/get-started/quickstart/fork-a-repo <br>
 	- Remember how we used `git add .` to add all changed files to the staging area? Sometimes we want to add all files to the staging area except certain types of files. These could be large data files (GitHub has a 100Mb size limit) or temporary files that are not relevant to the project. You can tell git to ignore certain files by adding them to the `.gitignore` file. The `.gitignore` file is usually hidden, you can see it if you enter `ls -a` to list all files. 
 
 
+5. Pull request
+- Now that you have made changes and synced them from your local machine to your remote repository, you can request that your changes be added to the parent repository (the main class repo). <br>
+- Head to your repo on the website. Find the "Contribute" button on the top right and then hit the "Open pull request button". <br>
+
+6. Syncing fork and pulling changes. 
+- It's generally a good idea to sync changes with the parent repo before you add any changes of your own to avoid conflicts. To do that, click on the Sync fork button on the top right. This makes sure that your forked repo has the same files as the parent repo. Then make sure that your local repo is synced with your fork by entering the command `git pull` in terminal. 
+
+
+
 
 
 
