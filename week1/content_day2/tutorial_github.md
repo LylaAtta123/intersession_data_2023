@@ -16,8 +16,30 @@ To get practice with GitHub in this class, we will be adding data analyses and v
 	- If not, you can download and install git from here: https://git-scm.com/downloads <br> 
 
 2. Make a fork of the class repo
-- Making a fork copies an existing repository but keeps a link to it so that you can update your copy whenever the parent repository changes and you can also contribute new changes in your respository to the parent. <br>
+- Making a fork copies an existing repository to your account. It maintains a a link to the original parent respository so that you can update your copy whenever the parent repository changes and you can also contribute new changes in your respository to the parent. <br>
 https://docs.github.com/en/get-started/quickstart/fork-a-repo <br>
 - To create a fork, navigate to the class repo on the GitHub website: https://github.com/LylaAtta123/intersession_data_2023 <br>
-- In the top, right you will see a "Fork": <br>
+- In the top right you will see a "Fork" button: <br>
 ![git fork](./../../assets/images/week1_git_fork.png)  <br>
+- Follow the instructions to finish creating the repo. <br>
+
+3. Clone your forked repo 
+- Cloning a repo creates a local (on your machine) copy of the repository that is hosted on GitHub. This allows you to create/delete files and make changes as if you were working in a regular directory on your computer. <br>
+- To clone the repo, go to your forked repo in your GitHub account. Make sure in the top left you see [YOUR GitHub USERNAME/intersession_data_2023]. On the top right, you'll see a green "Code" button. After you click on code, copy the repo address. <br>
+![git fork](./../../assets/images/week1_git_clone.png)  <br>
+- In terminal enter the command `git clone [repo address]`. <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
