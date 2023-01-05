@@ -23,6 +23,8 @@ https://docs.github.com/en/get-started/quickstart/fork-a-repo <br>
 ![git fork](./../../assets/images/week1_git_fork.png)  <br>
 - Follow the instructions to finish creating the repo. <br>
 
+- See #6. for best practices to avoid conflicts. <br>
+
 3. Clone your forked repo 
 - Cloning a repo creates a local (on your machine) copy of the repository that is hosted on GitHub. This allows you to create/delete files and make changes as if you were working in a regular directory on your computer. <br>
 - To clone the repo, go to your forked repo in your GitHub account. Make sure in the top left you see [YOUR GitHub USERNAME/intersession_data_2023]. On the top right, you'll see a green "Code" button. After you click on code, copy the repo address. <br>
