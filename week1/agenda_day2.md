@@ -1,4 +1,4 @@
-## Day 2 - Thursday January 4th 
+## Day 2 - Thursday January 5th 
 
 ### Part 1: 8.30 - 9.20
 - Discussion of visualizations from yesterday
