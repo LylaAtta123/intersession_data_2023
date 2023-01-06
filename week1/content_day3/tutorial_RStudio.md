@@ -55,6 +55,9 @@ As you create variables and dataframes, a list of all items saved in your enviro
 
 In this window, you will be able to view plots as you create them. This window can also display documentation for variables when you utilize the help feature.
 
+<img width="392" alt="Help Documentation Example" src="https://user-images.githubusercontent.com/54687845/211020765-9010d633-39d3-43c1-a429-8bf7395e77c7.png">
+
+
 2. Edit a R script to have a comment. Comments are created by beginning a line with `#`.
 3. Save your R script as `YourName_day3.R` in your cloned course repository i.e. `intersession_data_2023/code/day3/`.
 
