@@ -41,7 +41,9 @@ You can utilize the version of R that you downloaded by using the "Console". Her
 ##### Text Editor
 
 In the text editor window, you can edit and save R files. R scripts are how you can save lines of code in a file to run in the future. R scripts have the naming syntax 'filename.R' when saved. Practice creating and saving R scripts onto your local machine by utilizing the icons at the top left.
-<img width="786" alt="R Script" src="https://user-images.githubusercontent.com/54687845/210785723-ca760aac-19fb-480c-a258-cbecc9392709.png"> 
+
+<img width="697" alt="RStudio text editor" src="https://user-images.githubusercontent.com/54687845/211020215-83fff257-c0ea-4fe6-9b84-ae59284cc123.png">
+
 
 ##### Environment
 
