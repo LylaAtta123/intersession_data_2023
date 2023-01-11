@@ -12,3 +12,6 @@ head(iris)
 
 #### OTHER NOTES ####
 #install.packages('datasets', dependencies = TRUE)
+
+getwd()
+setwd()
