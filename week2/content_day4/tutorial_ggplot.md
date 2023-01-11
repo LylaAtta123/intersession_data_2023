@@ -28,7 +28,7 @@ By the end of this lesson students should be able to:
 #### Push changes to forked repo and create pull request
 13. Add your new files to stage changes using `git add YourName_ggplot_practice.Rmd YourName_ggplot_practice.html`.
 14. Check that files are correctly staged using `git status`.
-15. Commit new changes using `git commit -m "your message".
+15. Commit new changes using `git commit -m "your message"`.
 16. Check that the commit is good to be pushed by using `git status`.
 17. Push new commit using `git push`.
 18. Use a web browser to navigate to your forked repository on GitHub. Refresh the page to see your new commit.
