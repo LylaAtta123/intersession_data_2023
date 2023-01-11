@@ -98,7 +98,7 @@ Optional: The `View` function opens the dataframe in another tab where you can s
 ```
 
 
-7. Try to create new exploratory visualization(s) of your own design. Consider what you think would be useful given the purpose of the experiment or simply test out different different functions and settings. You can use the ggplot cheat sheet.
+7. Try to create new exploratory visualization(s) of your own design. Write a description of which geometric primitive and visual channels you chose to use. Consider what you think would be useful given the purpose of the experiment or simply test out different different functions and settings. You can use the ggplot cheat sheet.
 
 ```{r}
 
@@ -111,6 +111,7 @@ Optional: The `View` function opens the dataframe in another tab where you can s
 ```{r}
 
 ```
+
 ```{r}
 
 ```
