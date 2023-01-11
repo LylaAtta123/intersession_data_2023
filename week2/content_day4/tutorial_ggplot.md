@@ -32,8 +32,8 @@ By the end of this lesson students should be able to:
 16. Check that the commit is good to be pushed by using `git status`.
 17. Push new commit using `git push`.
 18. Use a web browser to navigate to your forked repository on GitHub. Refresh the page to see your new commit.
-19. GitHub does not render html for preview, but you can just prepend this fragment to the URL of any HTML file: https://htmlpreview.github.io/? to see a preview in your web browser if desired.
+19. GitHub does not render html for preview, but you can just prepend this fragment to the URL of any HTML file: `https://htmlpreview.github.io/?` to see a preview in your web browser if desired.
 20. Submit a pull request to have the main repo pull your changes from your forked repo by selecting "Contribute" and "Create Pull Request"
 
 #### Learn More
-21. In the wait time as all students generate pull requests, please try out the interactive primer found at [https://posit.cloud/learn/primers/1.1](https://posit.cloud/learn/primers/1.1) or [https://posit.cloud/learn/primers/3](https://posit.cloud/learn/primers/3) to become more familiarized with ggplot
+21. In the wait time as all students generate pull requests, please try out the interactive primers found at [https://posit.cloud/learn/primers/1.1](https://posit.cloud/learn/primers/1.1) or [https://posit.cloud/learn/primers/3](https://posit.cloud/learn/primers/3) to become more familiarized with ggplot
