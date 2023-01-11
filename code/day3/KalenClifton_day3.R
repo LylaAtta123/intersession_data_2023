@@ -1,4 +1,4 @@
-# this is a comment
+# this is a new comment
 
 # how to assign variable
 x <- 4
