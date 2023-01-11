@@ -2,7 +2,9 @@
 title: "ggplot practice"
 author: "Kalen Clifton"
 date: "1/11/2022"
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
 ---
 
 ```{r setup, include=FALSE}
@@ -57,11 +59,11 @@ Shapes are utilized to encode the type of drive including four wheel drive, fron
 
 ## Visualizing Data from Experiments on Cyanobacteria Growth
 
-A group of student researchers were interested in showing that iron is a limiting nutrient for cyanobacteria. They tested this by tracking the growth of cyanobacteria in various iron concentrations.
+In 2020, the Baltimore Biocrew, a team of high school student researchers, was interested in engineering a strain of cyanobacteria to be more tolerant in iron-poor environment. First, they set out to show that iron is a limiting nutrient for cyanobacteria. They tested this by tracking the growth of a specific strain of cyanobacteria (Synechococcus CB0101) in tubes with various iron concentrations relative to that found in standard growth media (0x, 1/100x, 1/10x, 1x, 10x). Four students each conducted an independent trial by measuring turbidity of each culture tube using Secchi sticks over many days. Later, these measurement were converted into optical density (OD).  
 
-1. Load in `growth` data from characterization team (artificial data for example only)
+1. Load in `growth` data from the students' experiment
 ```{r}
-growth <- read.csv('https://raw.githubusercontent.com/kpclifton/Baltimore_BioCrew/master/app/examples/Data%20Visualization/characterization.csv')
+growth <- read.csv('https://raw.githubusercontent.com/kpclifton/intersession_data_2023/main/code/day4/cyanobacteria_growth.csv')
 ```
 
 2. View how the data is structured by printing the first 10 rows.
@@ -74,54 +76,42 @@ head(growth, 10)
 summary(growth)
 ```
 
-Optional: The `View` function opens the dataframe in another tab where you can scroll through the whole dataset
+Optional: The `View` function opens the dataframe in another tab where you can scroll through the whole dataset. Recomment out this section before knitting the document
 ```{r}
-View(growth)
+#View(growth)
 ```
 
-4. Plot `Days` vs `OD` as smooth line using `geom_smooth`
-```{r}
-
-```
-
-5. Plot `Days` vs `OD` as scatter plot using `geom_point`
+4. Plot `Hours` vs `OD` as smooth line using `geom_smooth`
 ```{r}
 
 ```
 
-
-6. Plot `Days` vs `OD` as scatter plot and add a label by mapping the variable `Trial` to `color`
+5. Plot `Hours` vs `OD` as scatter plot using `geom_point`
 ```{r}
 
 ```
 
 
-7. Try to create new plot(s) of your own design. Consider what you think would be useful for the project or simply test out different different functions and settings. You can use the cheat sheet at https://rstudio.com/wp-content/uploads/2016/11/ggplot2-cheatsheet-2.1.pdf 
-
+6. Plot `Hours` vs `OD` as scatter plot and encode trial as the visual channel hue by mapping `color` to the variable `Trial`
 ```{r}
-
 
 ```
 
-8. Load in `NewPart` data (artificial data for example only). 
-```{r}
-NewPart <- read.csv('https://raw.githubusercontent.com/kpclifton/Baltimore_BioCrew/master/app/examples/Data%20Visualization/NewParts.csv')
-```
 
-9. Try to create new plot(s) of your own design. Consider what you think would be useful for the project or simply test out different different functions and settings.
-```{r}
+7. Try to create new exploratory visualization(s) of your own design. Consider what you think would be useful given the purpose of the experiment or simply test out different different functions and settings. You can use the ggplot cheat sheet.
 
+```{r}
 
 ```
 
-10. Load in `NewPartTimeSeries` data (artificial data for example only). 
 ```{r}
-NewPartTimeSeries <- read.csv('https://raw.githubusercontent.com/kpclifton/Baltimore_BioCrew/master/app/examples/Data%20Visualization/NewPartTimeSeries.csv')
+
 ```
 
-11. Try to create new plot(s) of your own design. Consider what you think would be useful for the project or simply test out different different functions and settings.
 ```{r}
 
+```
+```{r}
 
 ```
 

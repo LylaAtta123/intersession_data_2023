@@ -18,4 +18,4 @@ By the end of this lesson students should be able to:
 8. Save changes as `YourName_ggplot_practice.Rmd` in `intersession_data_2023/code/day4`
 9. Follow the instructions in the Rmd file to run the example code chunks, writenew code, and generate visualizations.
 10. Once you have completed the questions, save the file again.
-11. Click on the `Knit` button to generate a pdf document with the code and visualizations embedded.
+11. Click on the `Knit` button to generate a html document with the code and visualizations embedded. (Agree to install markdown and Rmarkdown if prompted)
