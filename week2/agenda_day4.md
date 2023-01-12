@@ -11,4 +11,4 @@
 ### BREAK: 10.20 - 10.30
 
 ### Part 3: 10.30 - 11:15
-- Plotting with ggplot tutorial
+- Introduction to ggplot
