@@ -1,6 +1,6 @@
 ---
 title: "ggplot practice"
-author: "Kalen Clifton"
+author: "Nicolas Liu"
 date: "1/11/2022"
 output:
   html_document:
