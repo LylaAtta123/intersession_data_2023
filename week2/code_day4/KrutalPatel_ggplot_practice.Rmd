@@ -170,13 +170,13 @@ ggplot(data_summary2) +
 
 ```{r}
 
-# Plot regression lines for Hours VS OD for each respective trial. Here, we use the geom_smooth method and apply color encodings to represent each respective trial.
+# Plot regression lines for Hours VS OD for each respective trial. Here, we use the geom_smooth method and apply color encodings to represent each respective trial. Used color to highlight each individual line.
 
 ggplot(data = growth, aes(x=ï..Hours, y=OD, color = Trial)) + geom_smooth(method = 'lm', fill = NA) + ggtitle('Hours vs OD of Growth Data by Trial Number')
 
-# Plot regression lines for Hours VS OD for each respective Iron concentration. Here, we use the geom_smooth method and apply color encodings to represent each respective iron concentration.
+# Plot regression lines for Hours VS OD for each respective Iron concentration. Here, we use the geom_smooth method and apply color encodings to represent each respective iron concentration. Used color to highlight each individual line.
 
-ggplot(data = growth, aes(x=ï..Hours, y=OD, color = Iron)) + geom_smooth(method = 'lm', fill = NA) + ggtitle('Hours vs OD of Growth Data by Iron Concentration')
+ggplot(data = growth, aes(x=ï..Hours, y=OD, color = Iron)) + geom_smooth(method = 'lm', fill = NA) + ggtitle('Hours vs OD of Growth Data by Iron Concentration')  
 
 ```
 
