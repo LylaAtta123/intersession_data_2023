@@ -18,6 +18,7 @@ While individual publications may have specific policies on what should and shou
 This is a modified version of the figure we generated in one of our previous classes. Write a caption for this figure with your group. Note, star indicate significant difference using a two-sided t-test. 
 
 ![iris](./../../week1/code_day3/iris_multi.png)
+
 **This could be a caption**
 
 
