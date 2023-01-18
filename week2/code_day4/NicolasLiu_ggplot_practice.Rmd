@@ -1,6 +1,6 @@
 ---
 title: "ggplot practice"
-author: "Kalen Clifton"
+author: "Nicolas Liu"
 date: "1/12/2022"
 output:
   html_document:
@@ -83,38 +83,43 @@ Optional: The `View` function opens the dataframe in another tab where you can s
 
 4. Plot `Hours` vs `OD` as smooth line using `geom_smooth`
 ```{r}
-
+ggplot(data = growth) +
+  geom_smooth(mapping = aes(x = Hours, y = OD))
 ```
 
 5. Plot `Hours` vs `OD` as scatter plot using `geom_point`
 ```{r}
-
+ggplot(data = growth) +
+  geom_point(mapping = aes(x = Hours, y = OD))
 ```
 
 
 6. Plot `Hours` vs `OD` as scatter plot and encode trial as the visual channel hue by mapping `color` to the variable `Trial`
 ```{r}
-
+ggplot(data = growth) + 
+  geom_point(mapping = aes(x = Hours, y = OD, color = Trial))
 ```
 
 
-7. Try to create new exploratory visualization(s) of your own design. Consider what you think would be useful given the purpose of the experiment or simply test out different different functions and settings. You can use the ggplot cheat sheet.
+7. Try to create new exploratory visualization(s) of your own design. Write a description of which geometric primitive and visual channels you chose to use. Consider what you think would be useful given the purpose of the experiment or simply test out different different functions and settings. You can use the ggplot cheat sheet.
 
 ```{r}
-
+ggplot(data = growth) + 
+  geom_point(mapping = aes(x = Hours, y = OD, color = Trial, shape = Iron))
 ```
 
 ```{r}
-
+ggplot(data = growth) + 
+  geom_col(mapping = aes(x = Iron, y = OD, color = Trial))
 ```
 
-
 ```{r}
-
+ggplot(data = growth) + 
+  geom_point(mapping = aes(x = Hours, y = OD, color = Iron))
 ```
 
-
 ```{r}
-
+ggplot(data = growth) +
+  geom_jitter(mapping = aes(x = Hours, y = OD, color = Trial))
 ```
 

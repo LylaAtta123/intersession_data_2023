@@ -1,7 +1,7 @@
 ---
 title: "ggplot practice"
-author: "Kalen Clifton"
-date: "1/12/2022"
+author: "Krutal Patel"
+date: "1/11/2022"
 output:
   html_document:
     df_print: paged
@@ -81,40 +81,102 @@ Optional: The `View` function opens the dataframe in another tab where you can s
 #View(growth)
 ```
 
+
 4. Plot `Hours` vs `OD` as smooth line using `geom_smooth`
 ```{r}
+
+ggplot(data = growth, aes(x=ï..Hours, y=OD)) + geom_smooth() + ggtitle('Hours vs OD of Growth Data')
 
 ```
 
 5. Plot `Hours` vs `OD` as scatter plot using `geom_point`
 ```{r}
 
+ggplot(data = growth, aes(x=ï..Hours, y=OD)) + geom_point() + ggtitle('Hours vs OD of Growth Data')
+
 ```
 
 
 6. Plot `Hours` vs `OD` as scatter plot and encode trial as the visual channel hue by mapping `color` to the variable `Trial`
 ```{r}
+ggplot(data = growth, aes(x=ï..Hours, y=OD, color = Trial)) + geom_point() + ggtitle('Hours vs OD of Growth Data by Trial Number')
+
+```
+```{r}
+head(growth)
+```
+
+7. Try to create new exploratory visualization(s) of your own design. Write a description of which geometric primitive and visual channels you chose to use. Consider what you think would be useful given the purpose of the experiment or simply test out different different functions and settings. You can use the ggplot cheat sheet.
+
+```{r}
+# Study hours vs OD but now group by Iron concentrations to visualize any differences or correlations
+# For this I will use color to denote each iron type
+
+ggplot(data = growth, aes(x=ï..Hours, y=OD, color = Iron)) + geom_point() + ggtitle('Hours vs OD of Growth Data by Iron Concentration')
+
 
 ```
 
-
-7. Try to create new exploratory visualization(s) of your own design. Consider what you think would be useful given the purpose of the experiment or simply test out different different functions and settings. You can use the ggplot cheat sheet.
-
 ```{r}
+
+# Create a bar graph showing several metrics OD by each trial
+# This becomes a categorical data visualization where we are comparing results accross each independent trial. 
+
+# first step is to use group-by methods 
+             
+data_summary1 <- do.call(data.frame,    # Calculate summary stats using aggregate
+                         aggregate(OD ~ Trial,
+                                   growth,
+                                   FUN = function(x) c(mean(x), min(x), max(x), median(x), sd(x) ) ))
+
+colnames(data_summary1) <- c("Trial", "mean", "min", "max", "median", "stdev")
+
+# use a bar graph to visualize the mean and associated standard deviation for each trial 
+
+ggplot(data_summary1) +
+    geom_bar( aes(x=Trial, y=mean), stat="identity", fill="skyblue", alpha=0.7) +
+    geom_errorbar( aes(x=Trial, ymin=mean-stdev, ymax=mean+stdev), width=0.4, colour="black", alpha=0.9, size=1.3) + ggtitle('Mean OD with Stdev of OD for each Trial')
+
+ggplot(data_summary1) +
+    geom_bar( aes(x=Trial, y=median), stat="identity", fill="skyblue", alpha=0.7) +
+    geom_errorbar( aes(x=Trial, ymin=min, ymax=max), width=0.4, colour="black", alpha=0.9, size=1.3) + ggtitle('Median OD with Range of OD for each Trial')
+
 
 ```
 
 ```{r}
 
-```
+# 
+             
+data_summary2 <- do.call(data.frame,    # Calculate summary stats using aggregate
+                         aggregate(OD ~ Iron,
+                                   growth,
+                                   FUN = function(x) c(mean(x), min(x), max(x), median(x), sd(x) ) ))
 
+colnames(data_summary2) <- c("Iron", "mean", "min", "max", "median", "stdev")
+
+# use a bar graph to visualize the mean and associated standard deviation for each trial 
+
+ggplot(data_summary2) +
+    geom_bar( aes(x=Iron, y=mean), stat="identity", fill="burlywood", alpha=0.7) +
+    geom_errorbar( aes(x=Iron, ymin=mean-stdev, ymax=mean+stdev), width=0.4, colour="black", alpha=0.9, size=1.3) + ggtitle('Mean OD with Stdev of OD for each Iron Concentration')
+
+
+ggplot(data_summary2) +
+    geom_bar( aes(x=Iron, y=median), stat="identity", fill="burlywood", alpha=0.7) +
+    geom_errorbar( aes(x=Iron, ymin=min, ymax=max), width=0.4, colour="black", alpha=0.9, size=1.3) + ggtitle('Median OD with Range of OD for each Iron Concentration')
+
+```
 
 ```{r}
 
-```
+# Plot regression lines for Hours VS OD for each respective trial. Here, we use the geom_smooth method and apply color encodings to represent each respective trial. Used color to highlight each individual line.
 
+ggplot(data = growth, aes(x=ï..Hours, y=OD, color = Trial)) + geom_smooth(method = 'lm', fill = NA) + ggtitle('Hours vs OD of Growth Data by Trial Number')
 
-```{r}
+# Plot regression lines for Hours VS OD for each respective Iron concentration. Here, we use the geom_smooth method and apply color encodings to represent each respective iron concentration. Used color to highlight each individual line.
+
+ggplot(data = growth, aes(x=ï..Hours, y=OD, color = Iron)) + geom_smooth(method = 'lm', fill = NA) + ggtitle('Hours vs OD of Growth Data by Iron Concentration')  
 
 ```
 

@@ -1,7 +1,7 @@
 ---
 title: "ggplot practice"
-author: "Kalen Clifton"
-date: "1/12/2022"
+author: "Maya Niyogi"
+date: "1/11/2022"
 output:
   html_document:
     df_print: paged
@@ -83,11 +83,12 @@ Optional: The `View` function opens the dataframe in another tab where you can s
 
 4. Plot `Hours` vs `OD` as smooth line using `geom_smooth`
 ```{r}
-
+ggplot(data= growth) + geom_smooth((mapping = aes(x = Hours, y = OD)))
 ```
 
 5. Plot `Hours` vs `OD` as scatter plot using `geom_point`
 ```{r}
+ggplot(data= growth) + geom_point((mapping= aes(x= Hours, y= OD)))
 
 ```
 
@@ -95,6 +96,7 @@ Optional: The `View` function opens the dataframe in another tab where you can s
 6. Plot `Hours` vs `OD` as scatter plot and encode trial as the visual channel hue by mapping `color` to the variable `Trial`
 ```{r}
 
+ggplot(data= growth) + geom_point(mapping= aes(x= Hours, y= OD, color = Trial))
 ```
 
 
@@ -102,19 +104,19 @@ Optional: The `View` function opens the dataframe in another tab where you can s
 
 ```{r}
 
+ggplot(data= growth) + geom_boxplot(mapping= aes(x= Hours, y= OD, color= Trial ))
+```
+
+```{r}
+ggplot(data= growth) + geom_quantile(mapping= aes(x= Hours, y= OD, color= Trial))
 ```
 
 ```{r}
 
+ggplot(data= growth) + geom_rug(mapping= aes(x= Hours, y= OD, color= Trial))
 ```
-
-
 ```{r}
 
-```
-
-
-```{r}
-
+ggplot(data= growth) + geom_errorbar(mapping= aes(x= Hours, y= OD, xmin= 0.00, xmax= 636.00, ymin=0.135, ymax= 0.3699))
 ```
 

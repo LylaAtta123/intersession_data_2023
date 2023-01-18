@@ -1,14 +1,14 @@
 ---
 title: "ggplot practice"
-author: "Kalen Clifton"
-date: "1/12/2022"
+author: "Trace Terrell"
+date: "1/11/2022"
 output:
   html_document:
     df_print: paged
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+#knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## R Markdown
@@ -23,7 +23,7 @@ When you click the **Knit** button a document will be generated that includes bo
 
 Uncomment and run chunk to install the package ggplot2. Recomment out this section before knitting the document
 ```{r}
-#install.packages("ggplot2", dependencies = TRUE)
+# install.packages("ggplot2", dependencies = TRUE)
 ```
 
 Open ggplot2 library
@@ -37,7 +37,7 @@ The dataset `mpg` has data on several car models collected the US EPA. The code 
 
 ```{r}
 ggplot(data = mpg) +
-  geom_point(mapping = aes(x = cty, y = hwy, color = class, shape = drv))
+   geom_point(mapping = aes(x = cty, y = hwy, color = class, shape = drv))
 ```
 
 ### Description of the Data Visualization Example
@@ -53,8 +53,8 @@ Shapes are utilized to encode the type of drive including four wheel drive, fron
 
 ## Code Template. If desired use for prompts below, replace the bracketed sections and delete the `#`'s
 ```{r}
-# ggplot(data = <DATA>) + 
-#  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))
+ggplot(data = mpg) + 
+   geom_point(mapping = aes(x=cty, y=hwy, color = class, shape = drv))
 ```
 
 ## Visualizing Data from Experiments on Cyanobacteria Growth
@@ -83,22 +83,34 @@ Optional: The `View` function opens the dataframe in another tab where you can s
 
 4. Plot `Hours` vs `OD` as smooth line using `geom_smooth`
 ```{r}
-
+ggplot(data = growth) +
+   geom_smooth(mapping = aes(x=Hours, y=OD))
 ```
 
 5. Plot `Hours` vs `OD` as scatter plot using `geom_point`
 ```{r}
-
+ggplot(data = growth) +
+  geom_point(mapping = aes(x = Hours, y = OD))
 ```
 
 
 6. Plot `Hours` vs `OD` as scatter plot and encode trial as the visual channel hue by mapping `color` to the variable `Trial`
 ```{r}
-
+ggplot(data = growth) +
+  geom_point(mapping = aes(x = Hours, y = OD, color = Trial))
 ```
 
 
-7. Try to create new exploratory visualization(s) of your own design. Consider what you think would be useful given the purpose of the experiment or simply test out different different functions and settings. You can use the ggplot cheat sheet.
+7. Try to create new exploratory visualization(s) of your own design. Write a description of which geometric primitive and visual channels you chose to use. Consider what you think would be useful given the purpose of the experiment or simply test out different different functions and settings. You can use the ggplot cheat sheet.
+
+### Will work on this later
+
+```{r}
+
+ggplot(data = growth) +
+  geom_point(mapping = aes(x = Hours, y = OD, color =  )) 
+  
+```
 
 ```{r}
 
@@ -107,12 +119,6 @@ Optional: The `View` function opens the dataframe in another tab where you can s
 ```{r}
 
 ```
-
-
-```{r}
-
-```
-
 
 ```{r}
 

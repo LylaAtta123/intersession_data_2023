@@ -1,10 +1,8 @@
 ---
-title: "ggplot practice"
-author: "Kalen Clifton"
-date: "1/12/2022"
-output:
-  html_document:
-    df_print: paged
+title: "Xia_ggplot_practice.Rmd"
+author: "Bella Xia"
+date: "2023-01-12"
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -15,15 +13,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-To run each chunk, click on the green arrow button in each code block.
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. 
-
-## Set up for Data Visualization
-
-Uncomment and run chunk to install the package ggplot2. Recomment out this section before knitting the document
+## Set up for data visualization
 ```{r}
-#install.packages("ggplot2", dependencies = TRUE)
+# install.packages("ggplot2", dependencies=TRUE)
 ```
 
 Open ggplot2 library
@@ -33,11 +27,11 @@ library(ggplot2)
 
 ## Plotting Example
 
-The dataset `mpg` has data on several car models collected the US EPA. The code chunk below generates a plot that displays some of that data.
+You can also embed plots, for example:
 
 ```{r}
-ggplot(data = mpg) +
-  geom_point(mapping = aes(x = cty, y = hwy, color = class, shape = drv))
+ggplot(data=mpg) + geom_point(mapping = aes(x=cty, y=hwy, color=class,
+                                            shape = drv))
 ```
 
 ### Description of the Data Visualization Example
@@ -58,7 +52,6 @@ Shapes are utilized to encode the type of drive including four wheel drive, fron
 ```
 
 ## Visualizing Data from Experiments on Cyanobacteria Growth
-
 In 2020, the Baltimore Biocrew, a team of high school student researchers, was interested in engineering a strain of cyanobacteria to be more tolerant in iron-poor environment. First, they set out to show that iron is a limiting nutrient for cyanobacteria. They tested this by tracking the growth of a specific strain of cyanobacteria (Synechococcus CB0101) in tubes with various iron concentrations relative to that found in standard growth media (0x, 1/100x, 1/10x, 1x, 10x). Four students each conducted an independent trial by measuring turbidity of each culture tube using Secchi sticks over many days. Later, these measurement were converted into optical density (OD).  
 
 1. Load in `growth` data from the students' experiment
@@ -78,43 +71,50 @@ summary(growth)
 
 Optional: The `View` function opens the dataframe in another tab where you can scroll through the whole dataset. Recomment out this section before knitting the document
 ```{r}
-#View(growth)
+# View(growth)
 ```
 
 4. Plot `Hours` vs `OD` as smooth line using `geom_smooth`
 ```{r}
-
+ggplot(data = growth) + 
+  geom_smooth(mapping = aes(x = Hours, y = OD))
 ```
 
 5. Plot `Hours` vs `OD` as scatter plot using `geom_point`
 ```{r}
-
+ggplot(data = growth) + 
+  geom_point(mapping = aes(x = Hours, y = OD))
 ```
 
 
 6. Plot `Hours` vs `OD` as scatter plot and encode trial as the visual channel hue by mapping `color` to the variable `Trial`
 ```{r}
-
+ggplot(data = growth) + 
+  geom_point(mapping = aes(x = Hours, y = OD, color = Trial))
 ```
 
 
-7. Try to create new exploratory visualization(s) of your own design. Consider what you think would be useful given the purpose of the experiment or simply test out different different functions and settings. You can use the ggplot cheat sheet.
+7. Try to create new exploratory visualization(s) of your own design. Write a description of which geometric primitive and visual channels you chose to use. Consider what you think would be useful given the purpose of the experiment or simply test out different different functions and settings. You can use the ggplot cheat sheet.
 
 ```{r}
-
+ggplot(data = growth) + 
+  geom_boxplot(mapping = aes(x = Trial, y = OD, fill= Trial))
 ```
 
 ```{r}
-
+ggplot(data = growth) + 
+  geom_dotplot(binaxis = "y", stackdir = "center", binwidth = 1/750, 
+               mapping = aes(x = Trial,y = OD, color = Trial))
 ```
-
 
 ```{r}
-
+ggplot(data = growth) + 
+  geom_boxplot(mapping = aes(x = Trial, y = Hours, fill = Trial))
 ```
-
 
 ```{r}
-
+ggplot(data = growth) + 
+  geom_rug(mapping = aes(x = Hours, y = OD))
 ```
+
 

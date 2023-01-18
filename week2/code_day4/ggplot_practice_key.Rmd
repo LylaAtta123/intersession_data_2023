@@ -1,5 +1,5 @@
 ---
-title: "ggplot practice"
+title: "ggplot practice key"
 author: "Kalen Clifton"
 date: "1/12/2022"
 output:
@@ -83,38 +83,88 @@ Optional: The `View` function opens the dataframe in another tab where you can s
 
 4. Plot `Hours` vs `OD` as smooth line using `geom_smooth`
 ```{r}
-
+ggplot(data = growth) + 
+  geom_smooth(mapping = aes(x = Hours, y = OD))
 ```
 
 5. Plot `Hours` vs `OD` as scatter plot using `geom_point`
 ```{r}
-
+ggplot(data = growth) + 
+  geom_point(mapping = aes(x = Hours, y = OD))
 ```
 
 
 6. Plot `Hours` vs `OD` as scatter plot and encode trial as the visual channel hue by mapping `color` to the variable `Trial`
 ```{r}
-
+ggplot(data = growth) + 
+  geom_point(mapping = aes(x = Hours, y = OD, color= Trial))
 ```
 
 
 7. Try to create new exploratory visualization(s) of your own design. Consider what you think would be useful given the purpose of the experiment or simply test out different different functions and settings. You can use the ggplot cheat sheet.
 
 ```{r}
-
+ggplot(data = growth) + 
+  geom_label(mapping =  aes(x=Hours, y=OD, color = Trial, label = Trial), nudge_x = 0.5, nudge_y = 0.9)
 ```
 
 ```{r}
-
-```
-
-
-```{r}
-
+ggplot(data = growth) + 
+  geom_smooth(mapping = aes(x = Hours, y = OD, color = Trial))
 ```
 
 
 ```{r}
-
+ggplot(data = growth) + 
+  geom_point(mapping = aes(x=Hours, y=OD, color = Iron)) +
+  ggtitle('Hours vs OD of Growth Data by Iron Concentration')
 ```
+
+
+```{r}
+ggplot(data = growth) + 
+  geom_smooth(mapping = aes(x = Hours, y = OD, color = Iron))
+```
+```{r}
+ggplot(data = growth) + 
+  geom_smooth(mapping = aes(x=Hours, y=OD, color = Iron), method = 'lm', fill = NA) + 
+  ggtitle('Hours vs OD of Growth Data by Iron Concentration')
+```
+
+
+```{r}
+ggplot(data = growth) +
+  geom_point(mapping = aes(x = Hours, y = OD, color= Iron)) +
+  facet_wrap(facets = vars(Trial))
+```
+
+```{r}
+ggplot(data = growth) +
+  geom_smooth(mapping = aes(x = Hours, y = OD, color= Iron)) +
+  facet_wrap(facets = vars(Trial))
+```
+
+```{r}
+ggplot(data = growth) + 
+  geom_smooth(mapping = aes(x=Hours, y=OD, color = Iron), method = 'lm', fill = NA) + 
+  facet_wrap(facets = vars(Trial))
+```
+
+
+```{r}
+ggplot(data = growth) + 
+  geom_boxplot(mapping = aes(x = Trial, y = OD))
+```
+
+```{r}
+ggplot(data = growth) + 
+  geom_dotplot(mapping = aes(x = Trial, y = OD, fill = Iron), binaxis = "y", stackdir = "center")
+```
+
+
+```{r}
+ggplot(data = growth) + 
+  geom_violin(mapping = aes(x = Trial, y = Hours, fill = Trial))
+```
+
 
