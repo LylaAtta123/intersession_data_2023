@@ -19,7 +19,7 @@ This is a modified version of the figure we generated in one of our previous cla
 
 ![iris](./../../week1/code_day3/iris_multi.png)
 
-**This could be a caption**
+*This could be a caption*
 
 
 
