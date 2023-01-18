@@ -1,7 +1,7 @@
 ---
 title: "ggplot practice"
-author: "Kalen Clifton"
-date: "1/12/2022"
+author: "Hannah Puhov"
+date: "1/11/2022"
 output:
   html_document:
     df_print: paged
@@ -22,9 +22,8 @@ When you click the **Knit** button a document will be generated that includes bo
 ## Set up for Data Visualization
 
 Uncomment and run chunk to install the package ggplot2. Recomment out this section before knitting the document
-```{r}
+
 #install.packages("ggplot2", dependencies = TRUE)
-```
 
 Open ggplot2 library
 ```{r}
@@ -83,17 +82,21 @@ Optional: The `View` function opens the dataframe in another tab where you can s
 
 4. Plot `Hours` vs `OD` as smooth line using `geom_smooth`
 ```{r}
-
+ ggplot(data = growth) + 
+  geom_smooth(mapping = aes(x = Hours, y = OD))
 ```
 
 5. Plot `Hours` vs `OD` as scatter plot using `geom_point`
 ```{r}
-
+ ggplot(data = growth) + 
+  geom_point(mapping = aes(x = Hours, y = OD))
 ```
 
 
 6. Plot `Hours` vs `OD` as scatter plot and encode trial as the visual channel hue by mapping `color` to the variable `Trial`
 ```{r}
+ ggplot(data = growth) + 
+  geom_point(mapping = aes(x = Hours, y = OD, color = Trial))
 
 ```
 
@@ -101,19 +104,20 @@ Optional: The `View` function opens the dataframe in another tab where you can s
 7. Try to create new exploratory visualization(s) of your own design. Consider what you think would be useful given the purpose of the experiment or simply test out different different functions and settings. You can use the ggplot cheat sheet.
 
 ```{r}
+ ggplot(data = growth) + 
+  geom_point(mapping = aes(x = Iron, y = OD, color = Trial))
+```
+## R Markdown
+
+Above is a visualization of the relationship between iron concentration in soil and optical density (OD), with each trial separated by a color. This visualization makes it clear that while there may have been a slight dependence on iron (most trials tend up with increasing iron, although likely not significantly), there was a higher dependance on trial (most points of one color are in similar locations). This implies that the trials may not have been very controlled.
+
+```{r}
 
 ```
 
 ```{r}
 
 ```
-
-
-```{r}
-
-```
-
-
 ```{r}
 
 ```

@@ -1,7 +1,7 @@
 ---
 title: "ggplot practice"
-author: "Kalen Clifton"
-date: "1/12/2022"
+author: "Maanya Bajaj"
+date: "1/11/2022"
 output:
   html_document:
     df_print: paged
@@ -63,7 +63,7 @@ In 2020, the Baltimore Biocrew, a team of high school student researchers, was i
 
 1. Load in `growth` data from the students' experiment
 ```{r}
-growth <- read.csv('https://raw.githubusercontent.com/kpclifton/intersession_data_2023/main/code/day4/cyanobacteria_growth.csv')
+growth <- read.csv('/Users/maanyabajaj/intersession_data_2023/week2/code_day4/cyanobacteria_growth.csv')
 ```
 
 2. View how the data is structured by printing the first 10 rows.
@@ -83,38 +83,47 @@ Optional: The `View` function opens the dataframe in another tab where you can s
 
 4. Plot `Hours` vs `OD` as smooth line using `geom_smooth`
 ```{r}
-
+ggplot(data = growth) + 
+geom_smooth(mapping = aes(x = OD, y = Hours))
 ```
 
 5. Plot `Hours` vs `OD` as scatter plot using `geom_point`
 ```{r}
-
+ggplot(data = growth) + 
+geom_point(mapping = aes(x = OD, y = Hours))
 ```
 
 
 6. Plot `Hours` vs `OD` as scatter plot and encode trial as the visual channel hue by mapping `color` to the variable `Trial`
 ```{r}
-
+ggplot(data = growth) + 
+geom_point(mapping = aes(x = OD, y = Hours, color = Trial))
 ```
 
 
-7. Try to create new exploratory visualization(s) of your own design. Consider what you think would be useful given the purpose of the experiment or simply test out different different functions and settings. You can use the ggplot cheat sheet.
+7. Try to create new exploratory visualization(s) of your own design. Write a description of which geometric primitive and visual channels you chose to use. Consider what you think would be useful given the purpose of the experiment or simply test out different different functions and settings. You can use the ggplot cheat sheet.
 
 ```{r}
-
+#Using geom_area and colour
+ggplot(data = growth) + 
+geom_area(mapping = aes(x = OD, y = Hours, colour = Trial))
 ```
 
 ```{r}
-
+#Using geom_step 
+ggplot(data = growth) + 
+geom_step(mapping = aes(x = OD, y = Hours))
 ```
 
-
 ```{r}
-
+#Using geom_dotplot and shape
+ggplot(data = growth) + 
+geom_rug(mapping = aes(x = OD, y = Hours, color = "red"))
 ```
 
-
 ```{r}
-
+#Using geom_quantile
+ggplot(data = growth) + 
+geom_quantile(mapping = aes(x = OD, y = Hours))
 ```
 

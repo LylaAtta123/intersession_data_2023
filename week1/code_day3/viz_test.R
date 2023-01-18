@@ -52,9 +52,11 @@ legend.colors <- unique(cols.species)
 # png('viz_iris_colors.png')
 par(mfrow = c(1,2))
 plot(iris$Sepal.Length, iris$Sepal.Width, pch = 16, bty = 'n', col = cols.species,
-     xlab = 'Sepal Length', ylab = 'Sepal Width', main = 'Sepal Lengths and Widths')
+     xlim = c(4,8), ylim = c(1.5, 4.5),
+     xlab = 'Sepal Length (cm)', ylab = 'Sepal Width (cm)', main = 'A')
 plot(iris$Petal.Length, iris$Petal.Width, pch = 16, bty = 'n', col = cols.species,
-     xlab = 'Petal Length', ylab = 'Petal Width', main = 'Petal Lengths and Widths')
+     xlim = c(0.5, 7.5), ylim = c(0, 3), 
+     xlab = 'Petal Length (cm)', ylab = 'Petal Width (cm)', main = 'B')
 legend(x=4, y=0.75, legend = legend.labels, col = legend.colors, pch = 16, bty = 'n')
 # dev.off()
 
@@ -71,6 +73,9 @@ dim(iris.viriginica)
 # combine petal lengths
 petal.lengths <- cbind(iris.setosa$Petal.Length, iris.versicolor$Petal.Length, iris.viriginica$Petal.Length)
 colnames(petal.lengths) <- species
+sepal.lengths <- cbind(iris.setosa$Sepal.Length, iris.versicolor$Sepal.Length, iris.viriginica$Sepal.Length)
+colnames(sepal.lengths) <- species
+
 
 # average petal length by species
 petal.length.avg <- colMeans(petal.lengths)
@@ -87,5 +92,30 @@ par(mfrow = c(1,1))
 boxplot(petal.lengths, #frame.plot = F,
         xlab = 'Flower Species', ylab = 'Petal Length', main = 'Comparing Petal Lengths between Flower Species')
 
-
+png('iris_multi.png', width = 700, height = 700)
+par(mfrow = c(2,2))
+plot(iris$Sepal.Length, iris$Sepal.Width, pch = 16, bty = 'n', col = cols.species,
+     xlim = c(4,8), ylim = c(1.5, 4.5),
+     xlab = 'Sepal Length (cm)', ylab = 'Sepal Width (cm)', main = 'A')
+plot(iris$Petal.Length, iris$Petal.Width, pch = 16, bty = 'n', col = cols.species,
+     xlim = c(0.5, 7.5), ylim = c(0, 3), 
+     xlab = 'Petal Length (cm)', ylab = 'Petal Width (cm)', main = 'B')
+legend(x=4, y=0.75, legend = legend.labels, col = legend.colors, pch = 16, bty = 'n')
+boxplot(sepal.lengths, frame.plot = F, ylim = c(4,9.25),
+        xlab = 'Flower Species', ylab = 'Petal Length', main = 'C')
+points(x = c(1,3), y = c(8.25,8.25), type = 'l')
+text(x = 2, y = 8.5, labels = '*', cex = 2)
+points(x = c(2,3), y = c(8.75,8.75), type = 'l')
+text(x = 2.5, y = 9, labels = '*', cex = 2)
+points(x = c(1,2), y = c(7.25,7.25), type = 'l')
+text(x = 1.5, y = 7.5, labels = '*', cex = 2)
+boxplot(petal.lengths, frame.plot = F, ylim = c(0,10), 
+        xlab = 'Flower Species', ylab = 'Petal Length', main = 'D')
+points(x = c(1,3), y = c(7.25,7.25), type = 'l')
+text(x = 2, y = 7.75, labels = '*', cex = 2)
+points(x = c(2,3), y = c(8.25,8.25), type = 'l')
+text(x = 2.5, y = 8.75, labels = '*', cex = 2)
+points(x = c(1,2), y = c(5.25,5.25), type = 'l')
+text(x = 1.5, y = 5.75, labels = '*', cex = 2)
+dev.off()
 
