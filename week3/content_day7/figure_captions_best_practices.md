@@ -21,7 +21,7 @@ This is a modified version of the figure we generated in one of our previous cla
 
 *This could be a caption*
 
-
+You can use the template in `code/day7/template.md` to write your caption. Remember to copy the file and rename it before modifying it to avoid conflicts in the repo.  
 
 ### References 
 
