@@ -92,7 +92,7 @@ par(mfrow = c(1,1))
 boxplot(petal.lengths, #frame.plot = F,
         xlab = 'Flower Species', ylab = 'Petal Length', main = 'Comparing Petal Lengths between Flower Species')
 
-png('iris_multi.png', width = 900, heigh = 900)
+png('iris_multi.png', width = 700, height = 700)
 par(mfrow = c(2,2))
 plot(iris$Sepal.Length, iris$Sepal.Width, pch = 16, bty = 'n', col = cols.species,
      xlim = c(4,8), ylim = c(1.5, 4.5),
@@ -109,7 +109,7 @@ points(x = c(2,3), y = c(8.75,8.75), type = 'l')
 text(x = 2.5, y = 9, labels = '*', cex = 2)
 points(x = c(1,2), y = c(7.25,7.25), type = 'l')
 text(x = 1.5, y = 7.5, labels = '*', cex = 2)
-boxplot(petal.lengths, frame.plot = F, ylim = c(0.5,8.5),
+boxplot(petal.lengths, frame.plot = F, ylim = c(0,10), 
         xlab = 'Flower Species', ylab = 'Petal Length', main = 'D')
 points(x = c(1,3), y = c(7.25,7.25), type = 'l')
 text(x = 2, y = 7.75, labels = '*', cex = 2)
