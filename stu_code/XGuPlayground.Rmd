@@ -1,0 +1,51 @@
+
+```{r}
+library(ggplot2)
+library(RColorBrewer)
+library(tidyverse)
+library(dplyr)
+
+```
+
+
+```{r}
+
+# read data 
+# remember to change this path to your local computer 
+# hardcoding bad practice
+completeInfo <- read.csv("/Users/gabriel/Downloads/GSE221261_Paneth_normalized_counts.csv")
+
+# inspect data
+head(completeInfo,5)
+
+colnames(completeInfo)
+```
+
+```{r Exploratory}
+
+summary(completeInfo)
+View(completeInfo)
+```
+
+```{r cleaning}
+
+#completeInfo$rowSum <-rowSums(completeInfo[:,completeInfo$MS1c:completeInfo$MS6c])
+
+completeInfo$Sum <-completeInfo %>% select(3:ncol(.))%>%rowSums()
+
+completeInfo <- completeInfo %>%arrange(desc(Sum))
+
+
+# hardcoding bad practice
+completeInfo$Mean <- completeInfo$Sum / 6 
+
+
+```
+
+
+```{r}
+
+ggplot(data = completeInfo) + geom_point(mapping = aes(x = MS1c, y = gene))
+
+
+```
