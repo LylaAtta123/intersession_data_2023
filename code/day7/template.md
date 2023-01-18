@@ -2,6 +2,6 @@
 ### Lyla Atta 
 
 #### Figure
-![iris figure](./../../week1/code_day3/iris_multi.png) \
+![iris figure](./../../week1/code_day3/iris_multi.png) 
 
 *my caption here*
