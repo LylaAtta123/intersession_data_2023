@@ -1,0 +1,20 @@
+## Iris Figure Caption
+### Lyla Atta 
+
+#### Figure
+![iris figure](./../../week1/code_day3/iris_multi.png)
+
+Figure A shows the distribution of Sepal Lengths (in cm) and Sepal Widths (in cm) for different types of flowers: setosa, versicolor, and virginica.
+We tend to see a positive correlation for each flower type, where a larger Sepal Length typically indicates a larger Sepal Width.
+This correlation is strongest for Setosa and weaker for Virginica and Versicolor.
+
+Figure B compares the Petal Length (in cm) against the Petal Width (in cm) for Setosa, Versicolor, and Virginica.
+We see that there is a positive correlation between Petal Length and Petal Width, where a large Petal Length indicates a larger Petal Width.
+
+Figure C shows the distribution of Sepal Lengths for the three flower species setosa, versicolor, and virginica.
+The median length of setosa sepals is about 5 cm, while versicolor's is 6 and virginica's is about 6.5 cm. Setosa sepals were found to range between 4.25 cm and 5.5 cm with a notable outlier at about 7.5 cm.
+Versicolor sepals ranged between about 5 cm and 7 cm, with a notable outlier at 8.5 cm. Virginica's sepals tended to range between 5.5 cm and 8 cm, with a notable outlier at 9 cm.
+
+Figure D shows the distribution of Petal Lengths for the three flower species setosa, versicolorm and virginica. 
+The median length of setosa petals is about 1.75 cm, while versicolor's is about 4 cm, and virginica's is about 6 cm. Setosa petals were found to range between 1.5 cm and 2 cm, while versicolor sepals ranged between
+3 and 5 cm, with a notable outlier at 6 cm. Virginica sepals ranged petals ranged between 4 cm and 7 cm, with notable outliers at 8 cm and 9 cm.
