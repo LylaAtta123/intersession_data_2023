@@ -1,0 +1,170 @@
+
+```{r}
+library(ggplot2)
+library(RColorBrewer)
+library(tidyverse)
+library(dplyr)
+library(Matrix)
+
+```
+
+
+```{r read paneth info}
+
+# read data 
+# remember to change this path to your local computer 
+# hardcoding bad practice
+completePanethInfo <- read.csv("/Users/gabriel/Downloads/GSE221261_Paneth_normalized_counts.csv")
+
+completePanethInfo <- completePanethInfo%>%filter(rowSums(across(where(is.numeric)))!=0)
+
+# inspect data
+head(completePanethInfo,5)
+
+colnames(completePanethInfo)
+```
+
+``` {r read Colon Ped count info}
+
+completeColonInfo <- read.csv("/Users/gabriel/Downloads/GSE221261_Colon_Peds_normalized_counts.csv")
+
+
+# droped all rows that contain 0
+completeColonInfo <- completeColonInfo%>%filter(rowSums(across(where(is.numeric)))!=0)
+
+
+```
+
+
+``` {r read Ileum Ped count info}
+completeIleumInfo <- read.csv("/Users/gabriel/Downloads/GSE221261_Ileum_Peds_normalized_counts.csv")
+
+# droped all rows that contain 0
+completeIleumInfo <- completeIleumInfo%>%filter(rowSums(across(where(is.numeric)))!=0)
+
+```
+
+``` {r pull Ileum and Colon together}
+
+pulled <- inner_join(completeIleumInfo, completeColonInfo, 
+                       c("X")) 
+
+# clean
+pulled <- subset(pulled, !grepl('_\\d+$', X))
+
+
+#colnames(pulled)
+
+#colnames(completeColonInfo)
+
+
+t.test(pulled[1,2:9], pulled[1,10:16])
+
+ttest <- function(df, grp1, grp2) {
+  x = df[grp1]
+  y = df[grp2]
+  x = as.numeric(x)
+  y = as.numeric(y)  
+  results = t.test(x, y)
+  results$p.value
+}
+rawpvalue = apply(pulled, 1, ttest, grp1 = c(2:9), grp2 = c(10:16))
+
+hist(rawpvalue)
+```
+
+``` {r log 2}
+# drop the sample name, transfer to log2
+log2pulled = log2(pulled[,-1])
+
+control <-  apply(pulled[,2:9], 1, mean)
+test <-  apply(pulled[,10:16], 1, mean)
+
+class(control) 
+
+class(test)
+
+foldchange <- control - test
+# view(foldchange)
+
+#hist(foldchange$, xlab = "log2 Fold Change (Control vs Test)")
+
+```
+
+``` {r volcano plot}
+
+results = cbind(foldchange, rawpvalue)
+results = as.data.frame(results)
+results$probename <- rownames(results)
+
+volcano = ggplot(data = results, aes(x = foldchange, y = -1*log10(rawpvalue))) + geom_point() + coord_cartesian(xlim = c(-1000, 1000))
+
+volcano
+```
+
+``` {r exclude outlier}
+
+
+foldchange_quantiles <- quantile(foldchange, c(0.05, 0.95))  # Calculate 5th & 95th percentiles
+
+foldchange_screened <- foldchange[foldchange > foldchange_quantiles[1] & foldchange < foldchange_quantiles[2]]
+
+rawp_quantiles <- quantile(rawpvalue, c(0.05, 0.95))  # Calculate 5th & 95th percentiles
+
+rawp_screened <- rawpvalue[rawpvalue > rawp_quantiles[1] & rawpvalue < rawp_quantiles[2]]
+
+results_screened = cbind(foldchange_screened,rawp_screened)
+results_screened = as.data.frame(results_screened)
+results_screened$probename <- rownames(results_screened)
+
+volcano = ggplot(data = results_screened, aes(x = foldchange_screened, y = -1*log10(rawp_screened)))
+volcano + geom_point()
+
+```
+
+```{r Exploratory}
+
+readRaw <- data.table::fread("/Users/gabriel/Downloads/GSE221261-GPL16791_series_matrix.txt")
+
+```
+
+```{r cleaning}
+
+#completeInfo$rowSum <-rowSums(completeInfo[:,completeInfo$MS1c:completeInfo$MS6c])
+
+completePanethInfo$Sum <-completePanethInfo %>% select(3:ncol(.))%>%rowSums()
+
+completePanethInfo <- completePanethInfo %>%arrange(desc(Sum))
+
+
+# hardcoding bad practice
+completePanethInfo$Mean <- completePanethInfo$Sum / 6 
+
+```
+
+
+``` {r extract top n rows}
+
+top_20_Paneth_info <- top_n(completePanethInfo,20,Mean)
+
+```
+
+
+```{r}
+
+ggplot(data = top_20_Paneth_info) + geom_point(mapping = aes(y = Mean, x = gene)) + scale_x_discrete(guide = guide_axis(angle = 90))
+
+#ggplot(top_20_Paneth_info, aes(x = gene)) + geom_density()
+
+#ggplot(data = mpg) +
+ # geom_point(mapping = aes(x = cty, y = hwy, color = class, shape = drv))
+```
+
+
+``` {r fold change}
+
+#ggplot(data=top_20_Paneth_info, aes(x=log2FoldChange, y=pvalue)) + geom_point()
+
+
+```
+
