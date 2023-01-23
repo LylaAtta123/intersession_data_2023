@@ -1,4 +1,4 @@
-# Introduction to Data Analaysis and Visualization
+# Introduction to Data Analysis and Visualization
 ## Instructors: Lyla Atta and Kalen Clifton
 ### Intersession 2023
 
