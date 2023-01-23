@@ -85,9 +85,9 @@ class(control)
 class(test)
 
 foldchange <- control - test
-# view(foldchange)
+#view(foldchange)
 
-#hist(foldchange$, xlab = "log2 Fold Change (Control vs Test)")
+hist(foldchange, xlab = "log2 Fold Change (Control vs Test)")
 
 ```
 
@@ -98,18 +98,18 @@ results = as.data.frame(results)
 results$probename <- rownames(results)
 
 volcano = ggplot(data = results, aes(x = foldchange, y = -1*log10(rawpvalue))) + geom_point() + coord_cartesian(xlim = c(-1000, 1000))
-
+#volcano = ggplot(data = results, aes(x = foldchange, y = -1*log10(rawpvalue))) + geom_point()
 volcano
 ```
 
 ``` {r exclude outlier}
 
 
-foldchange_quantiles <- quantile(foldchange, c(0.05, 0.95))  # Calculate 5th & 95th percentiles
+foldchange_quantiles <- quantile(foldchange, c(0.025, 0.95))  # Calculate 5th & 95th percentiles
 
 foldchange_screened <- foldchange[foldchange > foldchange_quantiles[1] & foldchange < foldchange_quantiles[2]]
 
-rawp_quantiles <- quantile(rawpvalue, c(0.05, 0.95))  # Calculate 5th & 95th percentiles
+rawp_quantiles <- quantile(rawpvalue, c(0.025, 0.95))  # Calculate 5th & 95th percentiles
 
 rawp_screened <- rawpvalue[rawpvalue > rawp_quantiles[1] & rawpvalue < rawp_quantiles[2]]
 
