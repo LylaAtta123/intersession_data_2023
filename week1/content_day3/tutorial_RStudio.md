@@ -1,4 +1,4 @@
-## Day 3 - Friday January 6th 
+## Day 2 - Thursday January 4th 
 
 ### RStudio (and R) Tutorial
 
