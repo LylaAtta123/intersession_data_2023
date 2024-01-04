@@ -59,11 +59,11 @@ In this window, you will be able to view plots as you create them. This window c
 
 
 2. Edit a R script to have a comment. Comments are created by beginning a line with `#`.
-3. Save your R script as `YourName_day3.R` in your cloned course repository i.e. `intersession_data_2023/code/day3/`.
+3. Save your R script as `YourName_day2.R` in your cloned course repository i.e. `intersession_data_2024/code/`.
 
-4. Use the terminal to navigate to your cloned repository. `cd intersession_data_2023/code/day3/`
+4. Use the terminal to navigate to your cloned repository. `cd intersession_data_2024/code/`
 5. Use `git pull` to pull the most update version of the repo to your local machine.
-6. Add your new file using `git add YourName_day3.R`.
+6. Add your new file using `git add YourName_day2.R`.
 7. Commit new change using `git commit -m "your message".
 8. Check that the commit is good to be pushed by using `git status`.
 9. Push new commit using `git push`.
