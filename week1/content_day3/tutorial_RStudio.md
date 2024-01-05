@@ -1,4 +1,4 @@
-## Day 2 - Thursday January 4th 
+## Day 3 - Friday January 5th 
 
 ### RStudio (and R) Tutorial
 
@@ -58,17 +58,17 @@ In this window, you will be able to view plots as you create them. This window c
 <img width="392" alt="Help Documentation Example" src="https://user-images.githubusercontent.com/54687845/211020765-9010d633-39d3-43c1-a429-8bf7395e77c7.png">
 
 
-2. Edit a R script to have a comment. Comments are created by beginning a line with `#`.
-3. Save your R script as `YourName_day2.R` in your cloned course repository i.e. `intersession_data_2024/code/`.
+2. Edit a R script to at least have a comment. Comments are created by beginning a line with `#`.
+3. Save your R script as `YourName_day3.R` in your cloned course repository i.e. `intersession_data_2024/code/`.
 
 4. Use the terminal to navigate to your cloned repository. `cd intersession_data_2024/code/`
-5. Use `git pull` to pull the most update version of the repo to your local machine.
-6. Add your new file using `git add YourName_day2.R`.
-7. Commit new change using `git commit -m "your message".
+5. Use `git pull` to pull the most updated version of the repo to your local machine.
+6. Add your new file using `git add YourName_day3.R`.
+7. Commit new change using `git commit -m "your message"`.
 8. Check that the commit is good to be pushed by using `git status`.
 9. Push new commit using `git push`.
 10. Use a web browser to navigate to your forked repository on GitHub. Refresh the page to your new commit.
 11. Submit a pull request by selecting "Contribute" and "Create Pull Request"
 
-12. In the wait time as all students generate pull requests, please try out the interactive primer found at [https://posit.cloud/learn/primers/1.2](https://posit.cloud/learn/primers/1.2) to become familiarized with R programming syntax.
+12. In the wait time as all students generate pull requests, please explore the "recipes" found at [https://posit.cloud/learn/recipes](https://posit.cloud/learn/recipes). If you are new to R, start with the "R Basics" and "Visualize Data" to begin to become familiarized with R programming syntax.  If you are more familiar with R, feel free to search the page for topics you may not know.
 
